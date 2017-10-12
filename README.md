@@ -38,6 +38,25 @@ $cd /Document
 $sudo ./cuda----
 选择跳过 第一步的驱动安装 然后一直yes，location 选择默认（enter）即可。
 安装成功之后添加一下PATH 重启即可
+$sudo vim /etc/profile在文件末尾添加：
+PATH=/usr/local/cuda/bin:$PATH
+export PATH
+保存退出。输入命令
+$source /etc/profile
+使其生效。
+
+5.后续验证步骤
+测试cuda是否安装成功：
+$cd /usr/local/cuda/samples
+编译例子：
+$sudo make all -j8运行编译可执行结果文件
+验证：
+$cd 1_ultilities 
+$cd DeviceQuery
+$./deviceQuery
+
+显示 ：PASS
+安装完成
 
 
 
